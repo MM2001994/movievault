@@ -11,7 +11,12 @@ const app = express();
 const PORT = 5000;
 const DB_FILE = path.join(__dirname, 'trending.json');
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://movievault-mm2001994s-projects.vercel.app/'  // add this after you get your Vercel URL
+  ]
+}));
 app.use(express.json());
 
 // Helper: read the JSON file
