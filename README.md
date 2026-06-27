@@ -1,88 +1,105 @@
-# MineSearch 🎬 — Find Movies You'll Love
+# MovieVault 🎬 — Find Movies You'll Love
 
-A sleek, responsive movie discovery web application built with **React.js** and **Tailwind CSS**. The application features real-time search capabilities with optimized debouncing and a custom trending movies tracker backend powered by **Node.js** and **Express**, utilizing the **TMDB (The Movie Database) API**.
+A sleek, responsive movie discovery web application built with **React.js** and **Tailwind CSS**. Features real-time search with optimized debouncing and a custom trending movies tracker backend powered by **Node.js** and **Express**, using the **TMDB (The Movie Database) API**.
 
-🔗 **Live Frontend:** [https://movievault-mm2001994s-projects.vercel.app](https://movievault-mm2001994s-projects.vercel.app)
+🔗 **Live Demo:** [movievault-mm2001994s-projects.vercel.app](https://movievault-mm2001994s-projects.vercel.app)
 
 ---
 
 ## 🚀 Features
 
-* **Real-Time Search with Debouncing:** Instant movie lookup that minimizes API overhead by waiting for the user to finish typing.
-* **Trending Searches Tracker:** Displays the top 5 most trending movies dynamically, backed by a custom lightweight JSON storage mechanism via the Express API.
-* **Aesthetic UI/UX:** Built with a dark-themed cinematic aesthetic using Tailwind CSS, featuring smooth scaling hover effects, clean typography, and high-quality movie cards.
-* **Fully Responsive:** Optimized performance and seamless layouts across desktop, tablet, and mobile screens.
+- **Real-Time Search with Debouncing** — Instant movie lookup that minimizes API calls by waiting for the user to stop typing
+- **Trending Searches Tracker** — Displays the top 5 most-searched movies, tracked by a custom Node.js/Express REST API with JSON file storage
+- **Cinematic UI** — Dark-themed aesthetic built with Tailwind CSS, featuring smooth hover effects, clean typography, and high-quality TMDB movie posters
+- **Fully Responsive** — Optimized layouts across desktop, tablet, and mobile
 
 ---
 
-## 📸 Previews
+## 📸 Preview
 
 ### 🏠 Landing Page
-![MineSearch Landing Page](public\Screenshot 2026-06-27 132601.png)
+![MovieVault Landing Page](public/landing.png)
 
-### 🔍 Live Search Results & Trending Metrics
-![MineSearch Search Results](public\Screenshot 2026-06-27 132641.png)
+### 🔍 Search Results & Trending
+![MovieVault Search Results](public/search-results.png)
 
 ---
 
 ## 🛠️ Tech Stack
 
 **Frontend:**
-* React.js (Functional components, Hooks)
-* Tailwind CSS (Custom gradients & layouts)
-* Vite (Build tool)
+- React.js (Functional components, Hooks — useState, useEffect, useDebounce)
+- Tailwind CSS v4
+- Vite
 
 **Backend:**
-* Node.js & Express.js
-* JSON File System (for trending data storage)
-* TMDB API Integration
+- Node.js & Express.js
+- JSON file storage (lightweight trending tracker)
+- TMDB API
 
 **Deployment:**
-* **Frontend:** Vercel
-* **Backend:** Render
+- Frontend → Vercel
+- Backend → Render
 
 ---
 
 ## ⚙️ Environment Variables
 
-To run this project locally, you will need to set up `.env` files in both your frontend and backend directories.
-
-### Backend `.env`
-Create a `.env` file in the root of your `backend` folder:
+### Frontend — create `.env` in project root:
 ```env
-PORT=5000
-TMDB_API_KEY=your_tmdb_api_key_here
+VITE_TMDB_API_KEY=your_tmdb_bearer_token_here
+VITE_BACKEND_URL=http://localhost:5000
 ```
 
-### Frontend `.env`
-Create a `.env` file in the root of your `frontend` folder:
-```env
-VITE_API_BASE_URL=http://localhost:5000 # Points to your local backend during development
-```
+### Backend — no `.env` needed locally (port is hardcoded to 5000)
+
+> Never commit your `.env` file. It is already in `.gitignore`.
 
 ---
 
-## 📦 Installation & Setup
+## 📦 Local Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/your-username/minesearch.git](https://github.com/your-username/minesearch.git)
-   cd minesearch
-   ```
+1. **Clone the repo:**
+```bash
+git clone https://github.com/manishmondal331/movievault.git
+cd movievault
+```
 
-2. **Setup Backend:**
-   ```bash
-   cd backend
-   npm install
-   # Ensure your .env file is created with the TMDB API key
-   npm start
-   ```
-   *The backend will run on `http://localhost:5000` and the trending API will be available at `/api/trending`.*
+2. **Start the backend:**
+```bash
+cd server
+npm install
+npm run dev
+```
+Backend runs on `http://localhost:5000`
+Test it: `http://localhost:5000/health` should return `{"status":"ok"}`
 
-3. **Setup Frontend:**
-   ```bash
-   cd ../frontend
-   npm install
-   # Ensure your .env file is created pointing to the backend
-   npm run dev 
-   ```
+3. **Start the frontend** (new terminal):
+```bash
+cd ..
+npm install
+npm run dev
+```
+Frontend runs on `http://localhost:5173`
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/health` | Server health check |
+| `GET` | `/api/trending` | Get top 5 most searched movies |
+| `POST` | `/api/trending` | Record a movie search |
+
+---
+
+## 🔐 TMDB API
+
+This project uses the [TMDB API](https://www.themoviedb.org/documentation/api). You'll need a free API key from TMDB to run it locally.
+
+---
+
+## 👨‍💻 Author
+
+**Manish Mondal** — [LinkedIn](https://linkedin.com/in/manish-mondal-32b941215) · [GitHub](https://github.com/manishmondal331)
