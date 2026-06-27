@@ -102,4 +102,4 @@ This project uses the [TMDB API](https://www.themoviedb.org/documentation/api). 
 
 ## 👨‍💻 Author
 
-**Manish Mondal** — [LinkedIn](https://linkedin.com/in/manish-mondal-32b941215) · [GitHub](https://github.com/manishmondal331)
+**Manish Mondal** — [LinkedIn](https://linkedin.com/in/manish-mondal-32b941215) · [GitHub](https://github.com/MM2001994)
