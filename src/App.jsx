@@ -104,7 +104,7 @@ const App = () => {
       <div className="wrapper">
         <header>
           <img src="./hero.png" alt="hero banner" />
-          <h1>MineSearch — Find <span className="text-gradient">Movies</span>  You'll Love </h1>
+          <h1>MovieVault — Find <span className="text-gradient">Movies</span>  You'll Love </h1>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
